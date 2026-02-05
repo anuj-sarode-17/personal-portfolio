@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anuj Sarode - Technical skills including system operations, programming, and engineering software">
+    <title>Technical Skills | Anuj Sarode</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .skill-popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+        .skill-popup.active { display: flex; }
+        .skill-popup-content {
+            background: var(--gray-medium);
+            border: 1px solid var(--purple-primary);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        .skill-popup-close {
+            position: absolute;
+            top: 1rem; right: 1rem;
+            background: transparent;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            width: 40px; height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .skill-popup-close:hover { background: var(--gray-light); color: var(--purple-accent); }
+        .skill-popup h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--white); padding-right: 3rem; }
+        .skill-popup h4 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 0.75rem; color: var(--purple-accent); }
+        .skill-popup .job-title { font-size: 1.2rem; color: var(--white); font-weight: 600; margin-bottom: 0.25rem; }
+        .skill-popup .job-date { color: var(--gray-dark); font-size: 0.95rem; margin-bottom: 1rem; }
+        .skill-popup ul { list-style: none; padding-left: 0; }
+        .skill-popup ul li {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--gray-dark);
+            line-height: 1.6;
+        }
+        .skill-popup ul li::before { content: "▸"; position: absolute; left: 0; color: var(--purple-accent); }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo">Anuj Sarode</a>
+            <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="leadership.html">Leadership & Volunteer</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="portfolio.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-header">
+        <h1>Technical Skills</h1>
+    </div>
+
+    <main>
+        <section class="content-section">
+            <div class="skills-grid">
+                <div class="skill-card fade-in">
+                    <h4>System Operation</h4>
+                    <div class="skill-subgroup">
+                        <span class="skill-subgroup-title">Wafer Bonder</span>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-skill="wafer-bonder">AML AWB-04</li>
+                        </ul>
+                    </div>
+                    <div class="skill-subgroup">
+                        <span class="skill-subgroup-title">Flip-chip Bonder</span>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-skill="fineplacer">Finetech Fineplacer sigma Sub-Micron Bonder</li>
+                        </ul>
+                    </div>
+                    <div class="skill-subgroup">
+                        <span class="skill-subgroup-title">Wire Bonder</span>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-skill="wire-bonder">F&S 5600 Automatic wire bonder</li>
+                            <li class="skill-item" data-skill="wire-bonder">Westbond 7KE manual wire bonder</li>
+                        </ul>
+                    </div>
+                    <div class="skill-subgroup">
+                        <span class="skill-subgroup-title">Bond Pull Tester</span>
+                        <ul class="skill-list">
+                            <li class="skill-item" data-skill="pull-tester">XYZTec Condor Sigma</li>
+                        </ul>
+                    </div>
+                    <div class="skill-subgroup">
+                        <ul class="skill-list">
+                            <li class="skill-item" data-skill="plasma">Diener Tetra 30 RF plasma system</li>
+                            <li class="skill-item" data-skill="welder">Parallel Gap welders</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h4>Programming & Engineering Software</h4>
+                    <div class="skill-subgroup">
+                        <ul class="skill-list">
+                            <li class="skill-item">MATLAB</li>
+                            <li class="skill-item" data-skill="klayout">kLayout</li>
+                            <li class="skill-item" data-skill="solidworks">Solidworks</li>
+                            <li class="skill-item">Silvaco</li>
+                            <li class="skill-item">Advance Package Designer</li>
+                        </ul>
+                    </div>
+                    <div class="skill-subgroup">
+                        <ul class="skill-list">
+                            <li class="skill-item">PHP</li>
+                            <li class="skill-item">MySQL</li>
+                            <li class="skill-item">Python</li>
+                            <li class="skill-item">HTML</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-card fade-in">
+                    <h4>Productivity Tools</h4>
+                    <ul class="skill-list">
+                        <li class="skill-item">Microsoft Word</li>
+                        <li class="skill-item">PowerPoint</li>
+                        <li class="skill-item">Excel</li>
+                        <li class="skill-item">LaTeX</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="skill-popup" id="skillPopup" role="dialog" aria-labelledby="popupTitle" aria-modal="true">
+        <div class="skill-popup-content">
+            <button class="skill-popup-close" aria-label="Close popup" id="closePopup">&times;</button>
+            <div id="popupContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column"><h4>Contact</h4><ul><li><a href="mailto:anujsarode17@gmail.com">Email</a></li><li><a href="tel:+16027435398">Phone</a></li><li><a href="https://www.linkedin.com/in/anuj-sarode-0b72971b" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
+            <div class="footer-column"><h4>Education</h4><ul><li>Arizona State University</li><li>IIST, Thiruvananthapuram</li></ul></div>
+            <div class="footer-column"><h4>Expertise</h4><ul><li>Semiconductor Fabrication</li><li>Advanced Packaging</li><li>RF Hardware Assembly</li><li>Wafer Bonding</li></ul></div>
+            <div class="footer-column"><h4>Experience</h4><ul><li>ISRO - Space Applications</li><li>9+ Years Experience</li><li>Satellite Systems</li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Anuj Sarode. All rights reserved.</p></div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        (function() {
+            var skillPopup = document.getElementById('skillPopup');
+            var popupContent = document.getElementById('popupContent');
+            var closePopup = document.getElementById('closePopup');
+            var skillExperienceMap = {
+                'wafer-bonder': { title: 'AML: AWB-04 Wafer Bonder', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SE"', company: 'Space Application Center, ISRO', date: 'July 2024 - July 2025', bullets: ['Worked on developing and optimizing wafer bonding processes—metal–metal thermocompression, LiNbO3-on-silicon (direct/adhesive), temporary BEOL bonding, and anodic sealing to support Wafer level packaging, photonics and MEMS applications at the Space Applications Center.'] },
+                    { jobTitle: 'Scientist/Engineer "SD"', company: 'Space Application Center, ISRO', date: 'July 2020 - June 2024', bullets: ['Identified and trained a team of three technicians for the daily operation of an automatic wire bonder-F&S 5600 and wafer bonder-AWB-04, achieving higher throughput by skill development of the technicians.'] }
+                ]},
+                'fineplacer': { title: 'Finetech: Fineplacer sigma Sub-Micron Bonder', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SE"', company: 'Space Application Center, ISRO', date: 'July 2024 - July 2025', bullets: ['Developed flip-chip die attach process for Indium and SAC solder-based high-density chips for space qualified assembly.'] }
+                ]},
+                'wire-bonder': { title: 'Wire Bonding Systems', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SD"', company: 'Space Application Center, ISRO', date: 'July 2020 - June 2024', bullets: ['Developed Au stud bonding process, including bumping using automated wire bonder, coining, and flip-chip bonding of bumped devices using flip-chip bonder for assembly of RF MMICs.', 'Identified and trained a team of three technicians for the daily operation of an automatic wire bonder-F&S 5600 and wafer bonder-AWB-04, achieving higher throughput by skill development of the technicians.'] },
+                    { jobTitle: 'Scientist/Engineer "SC"', company: 'Space Application Center, ISRO', date: 'July 2016 - June 2020', bullets: ['Led new process introduction for automated wire bonding on gold pads of GaAs and GaN chips by designing experiments, optimizing process parameters, and collaborating with QA, achieving 99% yield and 3× throughput compared to manual methods.'] }
+                ]},
+                'plasma': { title: 'Diener Tetra 30 RF Plasma System', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SE"', company: 'Space Application Center, ISRO', date: 'July 2024 - July 2025', bullets: ['Worked on developing and optimizing wafer bonding processes—metal–metal thermocompression, LiNbO3-on-silicon (direct/adhesive), temporary BEOL bonding, and anodic sealing to support Wafer level packaging, photonics and MEMS applications at the Space Applications Center.'] }
+                ]},
+                'welder': { title: 'Parallel Gap Welders', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SD"', company: 'Space Application Center, ISRO', date: 'July 2020 - June 2024', bullets: ['Developed micro-assembly processes for Multi-Chip Modules on multi-layer radio frequency substrates for ISRO satellites.'] }
+                ]},
+                'pull-tester': { title: 'XYZTec Condor Sigma Pull Tester', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SD"', company: 'Space Application Center, ISRO', date: 'July 2020 - June 2024', bullets: ['Developed Au stud bonding process, including bumping using automated wire bonder, coining, and flip-chip bonding of bumped devices using flip-chip bonder for assembly of RF MMICs.'] }
+                ]},
+                'klayout': { title: 'kLayout', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SE"', company: 'Space Application Center, ISRO', date: 'July 2024 - July 2025', bullets: ['Designed calibration wafer with fiducial using KLayout for wafer bonder camera and backlash calibration to improve process yield, saving significant time in procurement.'] }
+                ]},
+                'solidworks': { title: 'Solidworks', experiences: [
+                    { jobTitle: 'Scientist/Engineer "SD"', company: 'Space Application Center, ISRO', date: 'July 2020 - June 2024', bullets: ['Engineered a novel package design and hermetic sealing process using new materials, reducing turnaround time by ∼50% and process cost by ∼20%.', 'Involved in Package Design Review, creation and approval of fabrication sequences for assembly of RF satellite subsystems.'] }
+                ]}
+            };
+            document.querySelectorAll('.skill-item[data-skill]').forEach(function(item) {
+                item.addEventListener('click', function() {
+                    var skillKey = item.getAttribute('data-skill');
+                    var skillData = skillExperienceMap[skillKey];
+                    if (skillData) {
+                        var html = '<h3 id="popupTitle">' + skillData.title + '</h3>';
+                        skillData.experiences.forEach(function(exp) {
+                            html += '<div><h4>' + exp.jobTitle + '</h4><p class="job-title">' + exp.company + '</p><p class="job-date">' + exp.date + '</p><ul>';
+                            exp.bullets.forEach(function(b) { html += '<li>' + b + '</li>'; });
+                            html += '</ul></div>';
+                        });
+                        popupContent.innerHTML = html;
+                        skillPopup.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            if (closePopup) closePopup.addEventListener('click', function() { skillPopup.classList.remove('active'); document.body.style.overflow = ''; });
+            if (skillPopup) skillPopup.addEventListener('click', function(e) { if (e.target === skillPopup) { skillPopup.classList.remove('active'); document.body.style.overflow = ''; } });
+            document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && skillPopup.classList.contains('active')) { skillPopup.classList.remove('active'); document.body.style.overflow = ''; } });
+        })();
+    </script>
+</body>
+</html>

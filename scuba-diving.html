@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anuj Sarode - Scuba Diving Certifications and Journey">
+    <title>Scuba Diving | Anuj Sarode</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .content-section.scuba { max-width: 1200px; }
+        .timeline { position: relative; padding: 2rem 0 2rem 200px; }
+        .timeline::before { content: ''; position: absolute; left: 100px; top: 0; bottom: 0; width: 2px; background: var(--gray-medium); }
+        .timeline-item { position: relative; margin-bottom: 4rem; display: flex; align-items: flex-start; gap: 2rem; }
+        .timeline-item.fade-in.visible { opacity: 1; transform: translateY(0); }
+        .timeline-image { flex: 0 0 200px; height: 200px; border-radius: 12px; overflow: hidden; border: 2px solid var(--gray-medium); transition: all 0.3s ease; background: transparent; padding: 0; cursor: zoom-in; }
+        .timeline-image:hover { border-color: var(--purple-primary); transform: scale(1.05); }
+        .timeline-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .timeline-dot { position: absolute; left: -100px; top: 100px; width: 20px; height: 20px; background: var(--purple-primary); border: 4px solid var(--black); border-radius: 50%; transform: translate(-50%, -50%); z-index: 2; box-shadow: 0 0 0 4px var(--purple-primary); }
+        .timeline-content { flex: 1; background: var(--gray-medium); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--gray-medium); transition: all 0.3s ease; }
+        .timeline-content:hover { border-color: var(--purple-primary); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(147, 51, 234, 0.2); }
+        .timeline-date { color: var(--purple-accent); font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .timeline-title { color: var(--white); font-size: 1.8rem; margin-bottom: 1rem; font-weight: 600; }
+        .timeline-description { color: var(--gray-dark); line-height: 1.8; font-size: 1.05rem; }
+        .timeline-padi-number { color: var(--gray-dark); font-size: 0.9rem; margin-top: 1rem; font-style: italic; }
+        .lightbox { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); display: none; align-items: center; justify-content: center; padding: 2rem; z-index: 2000; }
+        .lightbox.open { display: flex; }
+        .lightbox-content { max-width: min(1100px, 96vw); max-height: 92vh; width: 100%; position: relative; }
+        .lightbox img { width: 100%; height: auto; max-height: 92vh; object-fit: contain; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.12); }
+        .lightbox-close { position: absolute; top: -0.75rem; right: -0.75rem; width: 42px; height: 42px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, 0.16); background: rgba(0, 0, 0, 0.6); color: var(--white); font-size: 1.25rem; cursor: pointer; }
+        @media (max-width: 968px) { .timeline { padding-left: 120px; } .timeline::before { left: 60px; } .timeline-item { flex-direction: row; gap: 1.5rem; } .timeline-image { flex: 0 0 150px; height: 150px; } .timeline-dot { top: 75px; left: -60px; } }
+        @media (max-width: 768px) { .timeline-image { flex: 0 0 150px; height: 150px; } }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <nav role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo">Anuj Sarode</a>
+            <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="leadership.html">Leadership & Volunteer</a></li>
+                <li><a href="interests.html">Interests</a></li>
+                <li><a href="portfolio.html">Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="section-header">
+        <h1>Scuba Diving</h1>
+    </div>
+
+    <main>
+        <section class="content-section scuba">
+            <p class="intro-text fade-in">Certified PADI diver with multiple certifications. Exploring the underwater world and continuing to advance my diving skills through various specialized courses.</p>
+
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/open-water.png" aria-label="View Open Water Diver certificate">
+                        <img src="assets/open-water.png" alt="Open Water Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 29, 2024</div>
+                        <h3 class="timeline-title">Open Water Diver</h3>
+                        <p class="timeline-description">Completed the foundational PADI Open Water Diver certification, learning essential scuba diving skills including equipment use, underwater communication, and safety procedures. This certification allows diving to depths of up to 18 meters (60 feet).</p>
+                        <p class="timeline-padi-number">PADI Number: 2403AE3413</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/advanced-open-water.png" aria-label="View Advanced Open Water Diver certificate">
+                        <img src="assets/advanced-open-water.png" alt="Advanced Open Water Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 31, 2024</div>
+                        <h3 class="timeline-title">Advanced Open Water Diver</h3>
+                        <p class="timeline-description">Advanced my diving skills with the PADI Advanced Open Water Diver certification, expanding depth limits to 30 meters (100 feet) and gaining experience in various diving specialties including deep diving, navigation, and underwater photography.</p>
+                        <p class="timeline-padi-number">PADI Number: 2403AE3445</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/enriched-air-diver.png" aria-label="View Enriched Air Diver certificate">
+                        <img src="assets/enriched-air-diver.png" alt="Enriched Air Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 23, 2024</div>
+                        <h3 class="timeline-title">Enriched Air Diver</h3>
+                        <p class="timeline-description">Certified as an Enriched Air (Nitrox) Diver, allowing the use of enriched air mixtures with higher oxygen content. This certification extends bottom time, reduces nitrogen absorption, and provides shorter surface intervals between dives.</p>
+                        <p class="timeline-padi-number">PADI Number: 2410AG5817</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/deep.png" aria-label="View Deep Diver certificate">
+                        <img src="assets/deep.png" alt="Deep Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">October 20, 2024</div>
+                        <h3 class="timeline-title">Deep Diver</h3>
+                        <p class="timeline-description">Completed the Deep Diver specialty certification, enabling safe diving to depths of 40 meters (130 feet). This certification focuses on deep diving techniques, safety procedures, emergency protocols, and managing the physiological effects of deeper dives.</p>
+                        <p class="timeline-padi-number">PADI Number: 2410AG0953</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/sidemount.png" aria-label="View SDI Sidemount Diver certificate">
+                        <img src="assets/sidemount.png" alt="SDI Sidemount Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 4, 2025</div>
+                        <h3 class="timeline-title">SDI Sidemount Diver</h3>
+                        <p class="timeline-description">Certified as an SDI Sidemount Diver, learning to dive with cylinders mounted on the sides of the body instead of on the back. This configuration offers improved streamlining, better gas management, and enhanced flexibility for technical diving applications.</p>
+                        <p class="timeline-padi-number">Certification Number: 1682357 | Evolution Diving, Cebu, Philippines</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/advanced-nitrox.png" aria-label="View Advanced Nitrox Diver certificate">
+                        <img src="assets/advanced-nitrox.png" alt="Advanced Nitrox Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 10, 2025</div>
+                        <h3 class="timeline-title">Advanced Nitrox Diver</h3>
+                        <p class="timeline-description">Qualified in the use of enriched air mixtures with 22% to 100% oxygen content. This advanced certification expands on basic nitrox training, allowing for more complex dive planning, extended bottom times, and deeper understanding of gas management for technical diving.</p>
+                        <p class="timeline-padi-number">Certification Number: 1682358 | Evolution Diving, Cebu, Philippines</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-in">
+                    <button class="timeline-image" type="button" data-full="assets/decompression-procedures.png" aria-label="View Decompression Procedures Diver certificate">
+                        <img src="assets/decompression-procedures.png" alt="Decompression Procedures Diver Certification">
+                    </button>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">April 10, 2025</div>
+                        <h3 class="timeline-title">Decompression Procedures Diver</h3>
+                        <p class="timeline-description">Certified to conduct dives requiring planned staged decompression to depths of 150 feet/45 meters. This technical diving certification covers decompression theory, gas planning, emergency procedures, and the use of multiple gas mixtures for extended bottom times and safe ascent protocols.</p>
+                        <p class="timeline-padi-number">Certification Number: 1682359 | Evolution Diving, Cebu, Philippines</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Certificate image viewer">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close image viewer">×</button>
+            <img id="lightboxImg" alt="">
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column"><h4>Contact</h4><ul><li><a href="mailto:anujsarode17@gmail.com">Email</a></li><li><a href="tel:+16027435398">Phone</a></li><li><a href="https://www.linkedin.com/in/anuj-sarode-0b72971b" target="_blank" rel="noopener noreferrer">LinkedIn</a></li></ul></div>
+            <div class="footer-column"><h4>Education</h4><ul><li>Arizona State University</li><li>IIST, Thiruvananthapuram</li></ul></div>
+            <div class="footer-column"><h4>Expertise</h4><ul><li>Semiconductor Fabrication</li><li>Advanced Packaging</li><li>RF Hardware Assembly</li><li>Wafer Bonding</li></ul></div>
+            <div class="footer-column"><h4>Experience</h4><ul><li>ISRO - Space Applications</li><li>9+ Years Experience</li><li>Satellite Systems</li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Anuj Sarode. All rights reserved.</p></div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        (function() {
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = document.getElementById('lightboxImg');
+            var lightboxClose = document.getElementById('lightboxClose');
+            function openLightbox(src, alt) {
+                lightboxImg.src = src;
+                lightboxImg.alt = alt || 'Certificate';
+                lightbox.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                if (lightboxClose) lightboxClose.focus();
+            }
+            function closeLightbox() {
+                lightbox.classList.remove('open');
+                lightboxImg.src = '';
+                document.body.style.overflow = '';
+            }
+            document.querySelectorAll('.timeline-image[data-full]').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var img = btn.querySelector('img');
+                    openLightbox(btn.getAttribute('data-full'), img ? img.alt : 'Certificate');
+                });
+            });
+            if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+            if (lightbox) lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
+            window.addEventListener('keydown', function(e) { if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox(); });
+        })();
+    </script>
+</body>
+</html>
