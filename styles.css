@@ -462,7 +462,8 @@ nav {
     padding-bottom: 0.5rem;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.cert-badge { display: inline-flex; align-items: center; gap: 1rem; margin: 0.75rem 0 1.25rem; }
+.cert-badges-row { display: flex; flex-wrap: wrap; gap: 2rem; margin: 0.75rem 0 1.25rem; align-items: flex-start; }
+.cert-badge { display: inline-flex; align-items: center; gap: 1rem; }
 .cert-badge img {
     width: 110px; height: auto;
     border-radius: 12px;
@@ -552,28 +553,79 @@ nav {
 .job-description li { margin: 1rem 0; line-height: 1.9; color: var(--gray-dark); font-size: 1.05rem; }
 
 /* Leadership */
-.leadership-list {
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+.leadership-card {
     background: var(--gray-medium);
-    padding: 2.5rem 3rem;
+    padding: 2rem 2.25rem;
     border: 1px solid var(--gray-medium);
     border-radius: 16px;
-    max-width: 900px;
+    transition: all 0.3s ease;
 }
-.leadership-list ul { list-style: none; padding-left: 0; }
-.leadership-list li {
+.leadership-card:hover {
+    border-color: var(--purple-primary);
+    transform: translateY(-5px);
+}
+.leadership-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    border-bottom: 2px solid var(--purple-primary);
+    padding-bottom: 0.75rem;
+}
+.leadership-card p {
     color: var(--gray-dark);
     line-height: 1.9;
     font-size: 1.05rem;
-    margin-bottom: 1.25rem;
-    padding-left: 1.75rem;
-    position: relative;
+    margin: 0;
 }
-.leadership-list li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: var(--purple-accent);
+
+/* Resume download */
+.resume-download-card {
+    background: var(--gray-medium);
+    padding: 4rem 3rem;
+    border: 1px solid var(--gray-medium);
+    border-radius: 16px;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+.resume-download-card:hover {
+    border-color: var(--purple-primary);
+    transform: translateY(-5px);
+}
+.resume-download-card h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+}
+.resume-download-card p {
+    color: var(--gray-dark);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+.resume-download-btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--purple-primary);
+    color: var(--white);
+    text-decoration: none;
     font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--purple-primary);
+}
+.resume-download-btn:hover,
+.resume-download-btn:focus {
+    background: transparent;
+    color: var(--purple-accent);
+    border-color: var(--purple-accent);
+    outline: none;
 }
 
 /* Intro text */
@@ -701,6 +753,7 @@ footer {
     .interests-grid { grid-template-columns: 1fr; }
     .education-grid { grid-template-columns: 1fr; }
     .education-card.certifications-card { grid-column: 1; }
+    .leadership-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .astrophotography-gallery { grid-template-columns: 1fr; }
     .footer-content { grid-template-columns: 1fr; }
